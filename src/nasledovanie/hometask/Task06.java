@@ -23,15 +23,15 @@ public class Task06 extends Task05 {
 	}
 
 	int paymentOfMoneyPrize() {
-		if (getType().equals("ставка")) {
+		if (getType().equals("rate")) {
 			if (workingDayHours * getCount() > 200)
 				return sum() + prize;
 			return sum();
-		} else if (getType().equals("почасовая")) {
+		} else if (getType().equals("hourly")) {
 			if (getCount() > 200)
 				return sum() + prize;
 			return sum();
-		} else if (getType().equals("сдельная")) {
+		} else if (getType().equals("piecework")) {
 			if (pieceworkOfHours * getCount() > 200)
 				return sum() + prize;
 			return sum();
@@ -46,7 +46,7 @@ public class Task06 extends Task05 {
 	
 	int getSumProcent() {
 		int a  = paymentOfMoneyPrize();
-		if(getType().equals("офшорная зона"))
+		if(getType().equals("offshore"))
 			setCountProcent(0);
 		return a-(a*getCountProcent()/100);
 	}

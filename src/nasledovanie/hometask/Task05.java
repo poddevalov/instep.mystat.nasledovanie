@@ -1,25 +1,25 @@
 package nasledovanie.hometask;
 
 public class Task05 extends Task04 {
-	private final int feeOffshoreRate = 40;// работа за день в офшоре;
+	private final int feeOffshoreRate = 40;
 
 	Task05(String fio, String typeOfWork, int count, int countProcent, boolean children) {
 		super(fio, typeOfWork, count, countProcent, children);
 	}
 
 	int sum() {
-		if (getType().equals("ставка"))
+		if (getType().equals("rate"))
 			return stavka * getCount();
-		else if (getType().equals("почасовая"))
+		else if (getType().equals("hourly"))
 			return hourly * getCount();
-		else if (getType().equals("сдельная"))
+		else if (getType().equals("piecework"))
 			return piecewort * getCount();
 		else
 			return feeOffshoreRate * getCount();
 	}
 
 	String childTax() {
-		if (!(getPresenceOfChildren()) && !(getType().equals("офшорная зона"))) {
+		if (!(getPresenceOfChildren()) && !(getType().equals("offshore"))) {
 			setCountProcent(getCountProcent() + 5);
 			setProcent(getProcent().valueOf(getCountProcent()) + " %");
 		}
@@ -28,7 +28,7 @@ public class Task05 extends Task04 {
 	
 	int getSumProcent() {
 		int a  = sum();
-		if(getType().equals("офшорная зона"))
+		if(getType().equals("offshore"))
 			setCountProcent(0);
 		return a-(a*getCountProcent()/100);
 	}

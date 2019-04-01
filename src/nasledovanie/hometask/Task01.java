@@ -22,7 +22,7 @@ public class Task01 {
 	}
 
 	static void show() {
-		System.out.printf("%-10s%-15s%-10s%n", "ФИО", "Вид работы", "Сумма");
+		System.out.printf("%-10s%-15s%-10s%n", "FIO", "Kind of work", "Sum");
 		System.out.println("-----------------------------");
 	}
 
@@ -32,9 +32,9 @@ public class Task01 {
 	}
 
 	int sum() {
-		if (typeOfWork.equals("ставка"))
+		if (typeOfWork.equals("rate"))
 			return stavka * count;
-		else if (typeOfWork.equals("почасовая"))
+		else if (typeOfWork.equals("hourly"))
 			return hourly * count;
 		else
 			return piecewort * count;
@@ -45,7 +45,7 @@ public class Task01 {
 	}
 
 	static void conclusionTotalSum() {
-		System.out.printf("%-5s%23d%n", "Итого", total);
+		System.out.printf("%-5s%23d%n", "Total", total);
 	}
 
 	String getFio() {

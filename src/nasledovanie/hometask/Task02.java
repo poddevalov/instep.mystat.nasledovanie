@@ -5,7 +5,7 @@ public class Task02 extends Task01 {
 	private int countProcent;
 
 	public Task02() {
-		// super();
+		super();
 		procent = null;
 		countProcent = 0;
 	}
@@ -17,7 +17,7 @@ public class Task02 extends Task01 {
 	}
 
 	static void show() {
-		System.out.printf("%-10s%-15s%-10s%-10s%n", "ФИО", "Налог, %", "Сумма", "К оплате");
+		System.out.printf("%-10s%-15s%-10s%-10s%n", "FIO", "Tax, %", "Sum", "For payment");
 		System.out.println("---------------------------------------");
 	}
 
@@ -26,14 +26,14 @@ public class Task02 extends Task01 {
 	}
 
 	int getSumProcent() {
-		int a  = sum();
-		return a-(a*countProcent/100);
+		int a = sum();
+		return a - (a * countProcent / 100);
 	}
 
 	int getCountProcent() {
 		return countProcent;
 	}
-	
+
 	void setCountProcent(int i) {
 		countProcent = i;
 	}
